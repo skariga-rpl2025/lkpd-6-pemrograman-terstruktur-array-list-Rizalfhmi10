@@ -1,28 +1,20 @@
+package ArrayList;
 
 import java.util.ArrayList;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Hype
- */
 public class Perpustakaan {
-    private ArrayList<Buku> koleksiBuku = new ArrayList<>();
     
-    // jumlah buku
+    private ArrayList<Buku> koleksiBuku = new ArrayList<>();
+        
+    //jumlah buku
     public int jumlahBuku(){
         return koleksiBuku.size();
     }
-    // tambah buku
+    //tambah buku
     public void tambahBuku(String judul, String pengarang){
         koleksiBuku.add(new Buku(judul, pengarang));
     }
-    // edit buku baru
+    //edit buku baru
     public void gantiBuku(int index, String judul, String pengarang){
         koleksiBuku.set(index, new Buku(judul, pengarang));
     }
@@ -30,7 +22,7 @@ public class Perpustakaan {
     public void gantiBuku(int index, Buku baru){
         koleksiBuku.set(index, baru);
     }
-    // hapus buku dari array
+    //hapus buku dari array
     public void hapusBuku(int index){
         koleksiBuku.remove(index);
     }
@@ -38,20 +30,23 @@ public class Perpustakaan {
     public Buku lihatBuku(int index){
         return koleksiBuku.get(index);
     }
+    //cari buku berdasarkan judul
     public Buku cariBuku(String judul){
         for (Buku buku : koleksiBuku){
-            if(buku.getJudul().contains(judul)){
+            if (buku.getJudul().contains(judul)){
                 return buku;
             }
         }
         return null;
     }
+    //cari index buku berdasarkan objek Buku
     public int cariIndexBuku(Buku buku){
         for (int i = 0; i < koleksiBuku.size(); i++){
-            if(koleksiBuku.get(i).equals(buku)){
+            if (koleksiBuku.get(i).equals(buku)){
                 return i;
             }
         }
         return -1;
     }
-}
+    }
+
